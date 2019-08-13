@@ -47,7 +47,7 @@ export default class Popular extends React.Component {
 
     if (!this.state.repos[selectedLanguage]) {
       fetchPopularRepos(selectedLanguage)
-        .then(repos =>
+        .then((data) =>
           this.setState(({repos})=> ({
              repos: {
                  ...repos,
@@ -64,9 +64,9 @@ export default class Popular extends React.Component {
     }
   }
   isLoading() {
-      const {selectedLanguage, repos, error} = this.state
-      
-    return this.state.repos === null && this.state.error === null;
+        const {selectedLanguage, repos, error} = this.state
+        return !repos[selectedLanguage] && error === null
+ 
   }
   render() {
     const { selectedLanguage, repos, error } = this.state;
@@ -78,7 +78,7 @@ export default class Popular extends React.Component {
         />
         {this.isLoading() && <p>loading</p>}
         {error && <p>{error}</p>}
-        {repos && <pre>{JSON.stringify(repos, null, 2)}</pre>}
+        {repos[selectedLanguage] && <pre>{JSON.stringify(repos[selectedLanguage], null, 2)}</pre>}
       </React.Fragment>
     );
   }

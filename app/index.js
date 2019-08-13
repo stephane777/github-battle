@@ -8,9 +8,8 @@ import Popular from './components/Popular'
 // Lifecycle
 // UI
 
-class App extends React.Component{
+class App extends React.Component {
     render(){
-        
         return (
             <div className="container">
                 <Popular />

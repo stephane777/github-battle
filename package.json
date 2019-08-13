@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start":"webpack-dev-server --mode development --open --hot"
+    "start": "webpack-dev-server --mode development --open --hot"
   },
-  "babel":{
-    "presets":[
+  "babel": {
+    "presets": [
       "@babel/preset-env",
       "@babel/preset-react"
     ]
@@ -16,6 +16,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
